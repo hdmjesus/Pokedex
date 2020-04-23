@@ -1,0 +1,89 @@
+/* Media Queries Mixin
+**********************/
+h1 {
+  font-size: 25px;
+  font-family: "Marmelad", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: "Marmelad", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+
+h3 {
+  font-size: 14px;
+  font-family: "Marmelad", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #F9FAFC;
+  color: #333333;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.contenido {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.pokedex {
+  width: 100%;
+}
+
+.pokemon {
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  color: #333333;
+  box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.2);
+}
+.pokemon__imagen {
+  width: 100%;
+  margin: 0 auto;
+}
+.pokemon__imagen img {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+.pokemon__contenido {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  color: #FFF;
+  background-color: #333333;
+}
+.pokemon__title {
+  font-family: "Marmelad", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.pokemon__detalles {
+  display: flex;
+}
+.pokemon__habilidades {
+  width: 50%;
+}
+.pokemon__stats {
+  width: 50%;
+}

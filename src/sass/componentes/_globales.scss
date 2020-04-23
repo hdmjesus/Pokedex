@@ -1,0 +1,70 @@
+//Variables
+$Fuente2: 'Marmelad',
+sans-serif;
+$Fuente1:'Ubuntu',
+sans-serif;
+$color-primario: #333333;
+$color-secundario: #24e9ae;
+$color-variacion: #503f9a;
+$color-claro: #FFF;
+//Mixins
+//Sobra para cajas
+@mixin caja {
+    color: $color-primario;
+    box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.20);
+}
+
+// VERIFICA SI ES DETERMINADA FUENTE PARA COLOCAR CIERTOS ESTILOS
+@mixin titulos($fuente) {
+    @if $fuente==$Fuente1 {
+        font-family: $Fuente1;
+    }
+    @else {
+        font-family: $Fuente2;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+//FUNCION QUE PASA DE PIXELS A REM
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+// COLOCA EL TAMAÑO DE LETRA EN REM AL IGUAL QUE EL INTERLINEADO SEGUN EL FONT-SIZE
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+    line-height: calculateRem($size)*1.5;
+}
+
+// DA OPACIDAD A CIERTO ELEMENTO
+@function get-opacity($color, $amount) {
+    @return rgba($color, $amount);
+}
+
+// SEGUN EL TITLO QUE SEA, DA EL TAMAÑO DE LA FUENTE
+@each $header,
+$size in (h1: 25px, h2: 18px, h3: 14px) {
+    #{$header} {
+        font-size: $size;
+        @include titulos($Fuente2);
+        margin: 0;
+    }
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #F9FAFC;
+    color: $color-primario;
+    @include titulos($Fuente1);
+    @include font-size(16px);
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
