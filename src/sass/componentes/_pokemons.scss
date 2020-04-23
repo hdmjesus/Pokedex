@@ -1,7 +1,8 @@
 .pokemon {
-    width: 90%;
-    height: 500px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
     @include caja;
     &__imagen {
         width: 100%;
@@ -20,15 +21,46 @@
         background-color: $color-primario;
     }
     &__title {
-        @include titulos($Fuente2);
+        text-align: center;
     }
     &__detalles {
         display: flex;
+        p {
+            @include font-size(13px)
+        }
     }
     &__habilidades {
         width: 50%;
+        padding: 10px;
+        span {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        i {
+            color: $color-secundario;
+        }
     }
-    &__stats {
+    &__estadisticas {
         width: 50%;
+        padding: 10px;
+        h3 {
+            @include titulos($Fuente2)
+        }
+        span {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .vida {
+            color: #f31212;
+            @include font-size(17px)
+        }
+        .ataque {
+            color: #e0ada4;
+            @include font-size(17px)
+        }
+        .tipo {
+            color: #e9d62f;
+            @include font-size(17px)
+        }
     }
 }
