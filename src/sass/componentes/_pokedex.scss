@@ -1,3 +1,12 @@
 .pokedex {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    @include media(tablet) {
+        grid-gap: 10px;
+        grid-auto-rows: 1fr;
+        justify-content: space-around;
+        @include display-grid;
+        @include grid-template-columns(repeat(auto-fill, 300px));
+    }
 }

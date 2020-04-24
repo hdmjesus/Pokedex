@@ -43,6 +43,17 @@ main {
 
 .pokedex {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .pokedex {
+    grid-gap: 10px;
+    grid-auto-rows: 1fr;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
 }
 
 .pokemon {
